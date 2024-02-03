@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+body{
+    background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+background-repeat: no-repeat;
+}
+        .nav {
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            width: 100vw;
+            padding: 0.2em 1.0em; /* Smaller padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav h1, .nav h2 {
+            color: white;
+            margin-right: 20px; /* Adjust margin for right positioning */
+        }
+
+        .roadmap-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .year {
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+            padding: 15px;
+            color: #fff;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            left: 190px;
+        }
+
+        .year:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        .details {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .details p {
+            margin: 10px 0;
+        }
+
+        /* Add new style for right-aligned buttons */
+        .roadmap-container {
+            margin-left: auto;
+        }
+        .nav1{
+            position:relative;
+            left:50px;
+        }
+        #detailsContainer{
+            position: relative;
+            top:130px;
+            left:150px;
+        }
+        #firstYear{
+font-family: sans-serif;
+font-size: 80px;
+color: white;
+        }
+        #secondYear{
+            font-family: sans-serif;
+font-size: 80px;
+color: white;
+        }
+        #thirdYear{
+            font-family: sans-serif;
+font-size: 80px;
+color: white;
+        }
+        .xyz{
+            color:rgb(76, 76, 223);
+        }
+        #jg{
+            color: red;
+        }
+        #xyzp{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div>
+            <h1 class="nav1">NITS HACKS</h1>
+            <h2 class="nav1">Roadmap</h2>
+        </div>
+        <div class="roadmap-container">
+            <div class="year" onclick="showDetails('firstYear')">1st Year</div>
+            <div class="year" onclick="showDetails('secondYear')">2nd Year</div>
+            <div class="year" onclick="showDetails('thirdYear')">3rd Year</div>
+        </div>
+    </div>
+
+    <div id="detailsContainer"></div>
+
+    <script>
+        function showDetails(year) {
+            var detailsContainer = document.getElementById('detailsContainer');
+            detailsContainer.innerHTML = ''; // Clear existing content
+
+            var detailsElement = document.getElementById(year);
+            detailsContainer.innerHTML = detailsElement.innerHTML;
+        }
+    </script>
+
+    <div id="firstYear" class="details">
+        <h2 class="year-heading" id="jg">1st Year Engineering Roadmap</h2>
+        <p class="xyzp">Welcome to the thrilling world of engineering! Your first year is a crucial stepping stone.</p>
+        <br>
+        <ul class="xyz">
+            <li>Focus on fundamental courses in mathematics, physics, and introductory engineering subjects.</li>
+            <li>Participate in orientation programs to get acquainted with your campus and fellow students.</li>
+            <li>Explore different engineering disciplines to make an informed decision about your major.</li>
+        </ul>
+    </div>
+
+    <div id="secondYear" class="details">
+        <h2 class="year-heading" id="jg">2nd Year Engineering Roadmap</h2>
+        <p class="xyzp">Congratulations on completing your first year! Now, it's time to delve deeper into core engineering subjects.</p>
+        <br>
+        <ul class="xyz">
+            <li>Take advanced courses in engineering mechanics, circuit theory, materials science, and thermodynamics.</li>
+            <li>Engage in hands-on projects and lab work to apply theoretical knowledge in practical scenarios.</li>
+            <li>Join engineering clubs and professional societies to connect with like-minded peers.</li>
+        </ul>
+    </div>
+
+    <div id="thirdYear" class="details">
+        <h2 class="year-heading" id="jg">3rd Year Engineering Roadmap</h2>
+        <p class="xyzp">Specialize in chosen field:</p>
+        <br>
+        <ul class="xyz">
+            <li>Artificial Intelligence and Machine Learning</li>
+            <li>Web Development</li>
+            <li>Software Engineering</li>
+        </ul>
+        <p class="xyz">Engage in collaborative projects with fellow students.</p>
+        <p class="xyz">Prepare for graduation and explore career opportunities.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Homepage</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+            color: white;
+            padding: 0.4em 2em; /* Adjust the padding to move "NITS HACKS" to the right */
+            display: flex;
+            justify-content: space-between; /* Align "Your Name" to the left and nav to the right */
+            align-items: center; /* Vertically center "Your Name" and nav */
+        }
+
+        nav {
+            display: flex;
+            padding: 0.5em;
+            margin-left: -10px; /* Adjust the margin to move the navbar sections slightly to the left */
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1.2em 1em;
+            margin-right: 8px; /* Add spacing between navbar links */
+            position: relative;
+            left:32px;
+            top:10px;
+            overflow: hidden;
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background-color: #FFCC70;
+            transition: width 0.3s ease; /* Add a smooth transition for the underscore */
+        }
+
+        nav a:active::after,
+        nav a:focus::after {
+            width: 100%;
+        }
+
+        .profile-icon {
+            margin-left: auto; /* Push the profile icon to the right */
+            height: 70px;
+            width: 70px;
+            position: relative;
+            left:35px;
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            background-color: #333; /* Set the background color to match the header */
+            color: white; /* Set the text color to white */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .blog-card {
+            max-width: 300px;
+            margin: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blog-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 15px;
+        }
+
+        .blog-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .blog-card p {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #666;
+        }
+
+        .vote-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .vote-icon {
+            font-size: 20px;
+            cursor: pointer;
+            color: #4158D0;
+            transition: color 0.3s ease;
+        }
+
+        .vote-icon:hover {
+            color: #3542a3;
+        }
+
+        .vote-count {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .img1{
+            height: 30px;
+            width: 30px;
+        }
+        .name{
+            position: relative;
+            left: 64px;
+
+        }
+        .blog_main{
+            /* margin: auto; */
+            display: flex;
+            justify-content: space-between;
+        }
+        .foot{
+            display: none;
+        }
+        .read-more-btn{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>NITS HACKS</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="dsa.html">DSA</a>
+            <a href="dev.html">Dev</a>
+            <a href="roadmap.html">Academic</a>
+            <a href="#community">Community</a>
+            <a href="login.html">Login</a>
+            <img src="profilepng.png" alt="Profile Icon" class="profile-icon">
+        </nav>
+    </header>
+    <div class="blog_main">
+        <div class="blog-card">
+            <img src="profilepng.png" alt="Blog Image" class="img1">
+            <h2 class="name">Bishal Rathore</h2>
+            <div class="blog-card-content">
+                <h3>My Recent Interview Experience at Atlassian</h3>
+                <p>Learn how to create responsive and flexible layouts using CSS Grid. Dive into the power of modern web design.</p>
+                <div class="vote-section">
+                    <i class="fas fa-arrow-up vote-icon" onclick="upvote()"></i>
+                    <i class="fas fa-arrow-down vote-icon" onclick="downvote()"></i>
+                    <div class="vote-count" id="voteCount">Upvote: 0 | Downvotes: 0</div>
+                </div>
+                <a href="read.html" class="read-more-btn">Read More</a>
+            </div>
+        </div>
+          <!-- Example Blog Card -->
+        <div class="blog-card">
+            <img src="profilepng.png" alt="Blog Image" class="img1">
+            <h2 class="name">Bishal Rathore</h2>
+            <div class="blog-card-content">
+                <h3>My Recent Interview Experience at Atlassian</h3>
+                <p>Learn how to create responsive and flexible layouts using CSS Grid. Dive into the power of modern web design.</p>
+                <div class="vote-section">
+                    <i class="fas fa-arrow-up vote-icon" onclick="upvote()"></i>
+                    <i class="fas fa-arrow-down vote-icon" onclick="downvote()"></i>
+                    <div class="vote-count" id="voteCount">Upvote: 0 | Downvotes: 0</div>
+                </div>
+                <a href="#" class="read-more-btn">Read More</a>
+            </div>
+        </div>
+          <!-- Example Blog Card -->
+        <div class="blog-card">
+            <img src="profilepng.png" alt="Blog Image" class="img1">
+            <h2 class="name">Bishal Rathore</h2>
+            <div class="blog-card-content">
+                <h3>My Recent Interview Experience at Atlassian</h3>
+                <p>Learn how to create responsive and flexible layouts using CSS Grid. Dive into the power of modern web design.</p>
+                <div class="vote-section">
+                    <i class="fas fa-arrow-up vote-icon" onclick="upvote()"></i>
+                    <i class="fas fa-arrow-down vote-icon" onclick="downvote()"></i>
+                    <div class="vote-count" id="voteCount">Upvote: 0 | Downvotes: 0</div>
+                </div>
+                <a href="read.html" class="read-more-btn">Read More</a>
+            </div>
+        </div>
+    </div>
+    <!-- new---------div -->
+    <div class="blog_main">
+        <div class="blog-card">
+            <img src="profilepng.png" alt="Blog Image" class="img1">
+            <h2 class="name">Bishal Rathore</h2>
+            <div class="blog-card-content">
+                <h3>My Recent Interview Experience at Atlassian</h3>
+                <p>Learn how to create responsive and flexible layouts using CSS Grid. Dive into the power of modern web design.</p>
+                <div class="vote-section">
+                    <i class="fas fa-arrow-up vote-icon" onclick="upvote()"></i>
+                    <i class="fas fa-arrow-down vote-icon" onclick="downvote()"></i>
+                    <div class="vote-count" id="voteCount">Upvote: 0 | Downvotes: 0</div>
+                </div>
+                <a href="#" class="read-more-btn">Read More</a>
+            </div>
+        </div>
+          <!-- Example Blog Card -->
+        <div class="blog-card">
+            <img src="profilepng.png" alt="Blog Image" class="img1">
+            <h2 class="name">Bishal Rathore</h2>
+            <div class="blog-card-content">
+                <h3>My Recent Interview Experience at Atlassian</h3>
+                <p>Learn how to create responsive and flexible layouts using CSS Grid. Dive into the power of modern web design.</p>
+                <div class="vote-section">
+                    <i class="fas fa-arrow-up vote-icon" onclick="upvote()"></i>
+                    <i class="fas fa-arrow-down vote-icon" onclick="downvote()"></i>
+                    <div class="vote-count" id="voteCount">Upvote: 0 | Downvotes: 0</div>
+                </div>
+                <a href="#" class="read-more-btn">Read More</a>
+            </div>
+        </div>
+          <!-- Example Blog Card -->
+        <div class="blog-card">
+            <img src="profilepng.png" alt="Blog Image" class="img1">
+            <h2 class="name">Bishal Rathore</h2>
+            <div class="blog-card-content">
+                <h3>My Recent Interview Experience at Atlassian</h3>
+                <p>Learn how to create responsive and flexible layouts using CSS Grid. Dive into the power of modern web design.</p>
+                <div class="vote-section">
+                    <i class="fas fa-arrow-up vote-icon" onclick="upvote()"></i>
+                    <i class="fas fa-arrow-down vote-icon" onclick="downvote()"></i>
+                    <div class="vote-count" id="voteCount">Upvote: 0 | Downvotes: 0</div>
+                </div>
+                <a href="#" class="read-more-btn">Read More</a>
+            </div>
+        </div>
+    </div>
+    
+        <!-- Add more cards as needed -->
+    
+        <!-- Include Font Awesome CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    
+        <script>
+            let upvotes = 0;
+            let downvotes = 0;
+    
+            function upvote() {
+                upvotes++;
+                updateVotes();
+            }
+    
+            function downvote() {
+                downvotes++;
+                updateVotes();
+            }
+    
+            function updateVotes() {
+                const voteCountElement = document.getElementById('voteCount');
+                voteCountElement.textContent = `Upvotes: ${upvotes} | Downvotes: ${downvotes}`;
+            }
+        </script>
+    <!-- <footer>
+        <p class="foot">&copy; 2024 NITS HACKS. All rights reserved.</p>
+    </footer> -->
+
+</body>
+</html>
